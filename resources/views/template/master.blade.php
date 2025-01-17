@@ -195,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Starter Pages
@@ -269,7 +269,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- left column -->
           <div class="col-md-12">
             <!-- general form elements -->
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Movies</h3>
               </div>
@@ -279,7 +279,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Movie Title</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Movies name">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Movies name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Synopsis</label>
+                    <textarea class="form-control" name="synopsis" id="moviesynopsis" style="resize: none"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Year Published</label>
@@ -290,7 +294,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose Movie Poster</label>
+                        <label class="custom-file-label" for="exampleInputFile">Enter Movie Poster</label>
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text">Upload</span>
@@ -305,7 +309,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-secondary">Submit</button>
                 </div>
               </form>
             </div>
@@ -321,15 +325,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">General Form</li>
-            </ol>
-          </div> -->
+            </ol> -->
+          </div> 
         </div>
       </div>
 
             <!-- left column2 -->
           <div class="col-md-12">
             <!-- general form elements -->
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Genre</h3>
               </div>
@@ -365,7 +369,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-secondary">Submit</button>
                 </div>
               </form>
             </div>
