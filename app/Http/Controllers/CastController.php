@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class GenreController extends Controller
+class CastController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexx()
+    public function index()
     {
         //
-        $genres = DB::table('genres')->get();
-        return view('genre.indexx', compact('genres'));
+        $casts = DB::table('casts')->get();
+        return view('cast.index', compact('casts'));
     }
 
     /**
@@ -24,7 +24,7 @@ class GenreController extends Controller
     public function create()
     {
         //
-        return view('genre.create');
+        return view('cast.create');
     }
 
     /**
@@ -32,19 +32,20 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-
-        //validasi data inputan data wajib diisi
+        //
         $request->validate([
-            'name' => 'required|min:5',
-
+            'name'=> 'required|min:5',
+            'age'=> 'required|numeric',
+            'bio'=> 'required',
         ]);
 
         //queri buat save data
-        $query = DB::table('genres')->insert([
+        $query = DB::table('casts')->insert([
             'name' => $request['name'],
+            'age' => $request['age'],
+            'bio' => $request['bio'],
         ]);
-        //jika data disimpan maka di redirect ke halaman index
-        return redirect()->route('genre.indexx')->with(['success' => 'Data Berhasil ditambahkan']);
+        return redirect()->route('cast.index')->with(['success' => 'Data berhasil di tambahkan']);
     }
 
     /**
@@ -61,8 +62,9 @@ class GenreController extends Controller
     public function edit(string $id)
     {
         //
-        $genres = DB::table('genres')->where('id', $id)->first();
-        return view('genre.update', compact('genres'));
+        $casts = DB::table('casts')->where('id', $id)->first();
+
+        return view('cast.update', compact('casts'));
     }
 
     /**
@@ -72,16 +74,20 @@ class GenreController extends Controller
     {
         //
         $request->validate([
-            'name' => 'required|min:5',
+            'name'=> 'required|min:5',
+            'age'=> 'required',
+            'bio'=> 'required',
         ]);
 
         //query buat update data
-        $query = DB::table('genres')
+        $query = DB::table('casts')
             ->where('id', $id)
             ->update([
                 'name' => $request['name'],
+                'age' => $request['age'],
+                'bio' => $request['bio'],
             ]);
-            return redirect()->route('genre.indexx')->with(['success' => 'Data berhasil di ubah']);
+            return redirect()->route('cast.index')->with(['success' => 'Data berhasil di ubah']);
     }
 
     /**
@@ -90,9 +96,9 @@ class GenreController extends Controller
     public function delete(string $id)
     {
         //
-        $query = DB::table('genres')
+        $query = DB::table('casts')
             ->where('id', $id)
             ->delete();
-            return redirect()->route('genre.indexx')->with(['success' => 'Data berhasil di hapus']);
+            return redirect()->route('cast.index')->with(['success' => 'Data berhasil dihapus']);
     }
 };

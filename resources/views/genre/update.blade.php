@@ -16,13 +16,13 @@
       <!-- /.card-header -->
 
       <!-- form start -->
-      <form action="{{route('genre.update', $genre->id)}}" method="POST">
+      <form action="{{route('genre.update', $genres->id)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="card-body">
           <div class="form-group">
             <label for="movieGenre">Movie Genre</label>
-            <input type="text" class="form-control" @error('name') {{'is invalid'}} @enderror id="name" name="name" placeholder="Enter Movie Genre">
+            <input type="text" class="form-control" @error('name') {{'is invalid'}} @enderror id="name" name="name" placeholder="Enter Movie Genre" value={{$genres->name}}>
           </div>
         </div>
         <!-- /.card-body -->
